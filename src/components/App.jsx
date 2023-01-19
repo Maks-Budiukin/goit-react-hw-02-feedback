@@ -4,6 +4,12 @@ import Statistics from "./Statistics/Statistics";
 import FeedbackOptions from "./FeedbackOptions/FeedbackOptions";
 import Section from "./Section/Section";
 import Notification from "./Notification/Notification";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  width: 300px;
+  text-align: center;
+`
 
 export class App extends Component {
     state = {
@@ -28,7 +34,7 @@ export class App extends Component {
 
     render() {
       return (
-          <>
+          <Wrapper>
             <Section title="Please leave feedback">
               <FeedbackOptions options={Object.keys(this.state)} onLeaveFeedback={this.handleClick}/>
             </Section>
@@ -45,7 +51,7 @@ export class App extends Component {
               <Notification message="There is no feedback" />
             }
           </Section>
-          </>
+          </Wrapper>
         )
     }
 }
