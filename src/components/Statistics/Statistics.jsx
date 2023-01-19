@@ -1,4 +1,7 @@
-export default function Statistics({good, neutral, bad, total, positivePercentage}) {
+import React from "react"
+import PropTypes from 'prop-types';
+
+export default function Statistics({ good, neutral, bad, total, positivePercentage }) {
     return (
         <>
                 <p>Good: { good}</p>
@@ -9,4 +12,12 @@ export default function Statistics({good, neutral, bad, total, positivePercentag
         </>
     )
 
+}
+
+Statistics.propTypes = {
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+    total: PropTypes.number.isRequired,
+    positivePercentage: PropTypes.string.isRequired,
 }
